@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-background {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 中心圆 - 修正版 */
+.box1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vw;
+    border-radius: 50%;
+    filter: blur(30px);
+    
+    /* 修正：添加背景色和网格 */
+    background: 
+        radial-gradient(circle at center, rgba(235, 238, 244, 0.494) 0%, rgba(206, 235, 241, 0.1) 50%, transparent 100%),
+        linear-gradient(to right, rgba(22, 93, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(22, 93, 255, 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* 背景矩形 - 修正版 */
+.box2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    
+    /* 修正：确保多重背景正确应用 */
+    background: 
+        linear-gradient(0deg, #f5f7fa 0%, rgba(44, 120, 243, 0.5) 50%),
+        linear-gradient(to right, rgba(2, 28, 56, 0.1) 1px, transparent 5px),
+        linear-gradient(to bottom, rgba(22, 93, 255, 0.1) 1px, transparent 5px);
+    
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* 左上角圆形 - 完全重写 */
+.box3 {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    
+    /* 修正：正确的渐变语法 */
+    background: 
+        radial-gradient(circle at center, rgba(114, 240, 196, 0.3) 0%, rgba(206, 235, 241, 0.1) 70%, transparent 100%),
+        linear-gradient(to right, rgba(22, 93, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(22, 93, 255, 0.1) 1px, transparent 1px);
+    
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    filter: blur(30px);
+}
+
+/* 右下角圆形 - 修正版 */
+.box4 {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    filter: blur(30px);
+    
+    /* 修正：添加背景色 */
+    background: 
+        radial-gradient(circle at center, rgba(255, 142, 206, 0.3) 0%, rgba(206, 235, 241, 0.1) 70%, transparent 100%),
+        linear-gradient(to right, rgba(22, 93, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(22, 93, 255, 0.1) 1px, transparent 1px);
+    
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+}

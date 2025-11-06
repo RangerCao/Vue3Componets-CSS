@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rain Animation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cloud">
+            <div class="boat"></div>
+        </div>
+        <div class="floor">
+            <div class="water">
+                <div class="fish"></div>
+            </div>
+        </div>
+        <div class="lighthouse"></div>
+    </div>
+</body>
+<script>
+    //周期性生成/删除“雨”元素
+    function rain(){
+        let cloud = document.querySelector('.cloud');
+        let e = document.createElement('div');
+        let left = Math.floor(Math.random() * 310);
+        let width = Math.random()*5;
+        let height = Math.random()*50; 
+        let duration = Math.random()*0.5;
+
+        e.classList.add('drop');
+        cloud.appendChild(e);
+        e.style.left = left + 'px';
+        e.style.width = width + 'px';
+        e.style.height = height + 'px';
+
+        // 设置动画持续时间（删除“雨”元素的间隔）
+        setTimeout(function(){
+            cloud.removeChild(e);
+        }, 1000);
+    }
+    
+    setInterval(function(){
+        rain();
+    }, 10);
+    
+    // 初始化“鱼”属性
+    const fish = document.querySelector('.fish');
+    let x = 0;
+    let y = 0;
+    let targetX = 0;
+    let targetY = 0;
+    addEventListener('mousemove',function(e){
+        if(1){
+            targetX = e.clientX;
+            targetY = e.clientY;
+        }
+    })
+    // “鱼”跟随鼠标
+    function fishFollowX() {
+        // 缓动系数越小越平滑（0.1 ~ 0.2）
+        x += (targetX - x) * 0.01;
+        fish.style.left = (x-70) + "px";
+        requestAnimationFrame(fishFollowX);
+    }
+    function fishFollowY() {
+        // 缓动系数越小越平滑（0.1 ~ 0.2）
+        y += (targetY - y) * 0.01;
+        if(y > 700){
+            fish.style.top = (y-750) + "px";
+        }
+        requestAnimationFrame(fishFollowY);
+    }
+    fishFollowX();
+    fishFollowY();
+</script>
+</html>

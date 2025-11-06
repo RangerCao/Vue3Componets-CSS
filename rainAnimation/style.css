@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: #70d4cd;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.container .cloud{
+    position: relative;
+    top: -150px;
+    width: 320px;
+    height: 100px;
+    background-color: #fff5;
+    border-radius: 100px;
+    filter:drop-shadow(8px 8px 0 #0005);
+    z-index: 3;
+    
+    /* 同时应用两个动画：flash 用于闪光效果，move 用于移动 */
+    animation: flash 2s linear infinite, move 10s linear infinite;
+}
+@keyframes flash{
+    0%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff5)
+        brightness(1);
+    }
+    70%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff5)
+        brightness(1);
+    }
+    90%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 10px #fff)
+        brightness(10);
+    }
+    100%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff5)
+        brightness(1);
+    }
+}
+@keyframes move{
+    0%{
+        left: 0px;
+    }
+    20%{
+        left: 200px;
+    }
+    70%{
+        left: -200px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+.container .cloud::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    width: 110px;
+    height: 110px;
+    background-color: #484f59;
+    z-index: 3;
+    border-radius: 50%;
+    box-shadow: 90px -10px 0 30px #484f59;
+}
+.container .cloud::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #484f59;
+    z-index: 3;
+    border-radius: 100px;
+}
+.container .cloud .drop{
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    z-index: 2;
+    background-color: #00b7ff;
+    width: 2px;
+    height: 10px;
+    transform-origin: bottom;
+    animation: animateDrop 1s linear infinite;
+}
+@keyframes animateDrop{
+    0%{
+        transform: translateY(0) scaleY(1);
+    }
+    70%{
+        transform: translateY(360px) scaleY(1);
+    }
+    80%{
+        transform: translateY(360px) scaleY(0.2);
+    }
+    
+    100%{
+        transform: translateY(360px) scaleY(0) scaleX(15);
+
+    }
+}
+.container .floor{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to top, #139df8, transparent);
+    border-top: white 45px v transparent;
+}
+.container .floor .water{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top, #114a76, transparent);
+    filter: blur(4px);
+}
+.container .boat{
+    position: absolute;
+    top: 370px;
+    left: 50%;
+    width: 160px;
+    height: 35px;
+    z-index: 1;
+    background-color: #81a100;
+    border-radius: 0 0 20px 20px;
+    transform: translateX(-50%);
+}
+.container .boat::before{
+    content: '';
+    display: flex;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 20px;
+    height: 50px;
+    background-color: #efa963;
+    transform: translateX(-50%);
+}
+.container .boat::after{
+    content: '';
+    display: flex;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 25px solid #c53030;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.container .lighthouse{
+    position: absolute;
+    bottom: 430px;
+    right: 100px;
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 310px solid #a46e6e;
+    border-top: 80px solid #a46e6e;
+    border-radius: 20px;
+    filter: blur(3px);
+}
+.container .lighthouse::before{
+    content: '|+|+|+|';
+    font-size: 2em;
+    color: #31373e;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -60px;
+    left: 0;
+    width: 100px;
+    height: 60px;
+    transform: translateX(-50%);
+    background-color: #effc63e9;
+    box-shadow: 0 0 150px 30px #c9fb00;
+    border-radius: 20px;
+}
+.container .lighthouse::after{
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 60px solid #a46e6e;
+    border-radius: 20px;
+}
+.container .fish{
+    position: absolute;
+    width: 35px;
+    height: 4px;
+    border-top: 4px solid rgba(255, 255, 255, 0);
+    border-bottom: 4px solid transparent;
+    border-left: 20px solid #084f85c1;
+    border-right: 20px solid #084f85c1;
+    background-color: #084f85c1;
+    border-radius: 20px;
+    z-index: -1;
+}
