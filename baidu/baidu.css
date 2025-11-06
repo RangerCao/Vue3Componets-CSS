@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+    position: relative;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #3388ff;
+}
+.content{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* 顶部导航栏 */
+.header {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left a, .nav-right a {
+    margin: 0 10px;
+    font-size: 13px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.nav-menu-item {
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.user-name {
+    background: #3388ff;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* 主要内容区域 */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 130px;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.logo-text {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: -5px;
+}
+
+.logo-text span:nth-child(1) {
+    color: #3388ff;
+}
+
+.logo-text span:nth-child(2) {
+    color: #ee4a37;
+}
+
+.logo-text span:nth-child(3) {
+    color: #ffc107;
+}
+
+.logo-text span:nth-child(4) {
+    color: #3388ff;
+}
+
+.logo-text span:nth-child(5) {
+    color: #3388ff;
+    
+}
+.logo-text span:nth-child(6) {
+    color: #28a745;
+}
+.logo-text span:nth-child(7) {
+    color: #ee4a37;
+}
+.logo-text span:nth-child(8) {
+    color: #ffc107;
+}
+.logo-text span:nth-child(9) {
+    color: #3388ff;
+}
+
+/* 搜索框区域 */
+.search-box {
+    width: 650px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    height: 44px;
+    border: 2px solid #3388ff;
+    border-radius: 10px;
+    padding: 0 50px 0 16px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 108px;
+    height: 44px;
+    background: #3388ff;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-btn:hover {
+    background: #2a76e0;
+}
+
+/* 搜索选项 */
+.search-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-option {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+.search-option.active {
+    color: #3388ff;
+}
+
+/* 底部区域 */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f5f5f5;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #e4e4e4;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: #999;
+}
+
+/* 二维码区域 */
+.qrcode {
+    position: absolute;
+    right: 20px;
+    bottom: 80px;
+    text-align: center;
+    display: none;
+}
+
+.qrcode-img {
+    width: 120px;
+    height: 120px;
+    background: #f5f5f5;
+    border: 1px solid #e4e4e4;
+    margin-bottom: 5px;
+}
+
+.app-download:hover .qrcode {
+    display: block;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .search-box {
+        width: 90%;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: #70d4cd;
+}
+.container{
+    z-index: -1;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.container .cloud{
+    position: relative;
+    top: -350px;
+    width: 320px;
+    height: 100px;
+    background-color: #fff5;
+    border-radius: 100px;
+    filter:drop-shadow(8px 8px 0 #0005);
+
+    
+    /* 同时应用两个动画：flash 用于闪光效果，move 用于移动 */
+    animation: flash 2s linear infinite, move 40s linear infinite;
+}
+@keyframes flash{
+    0%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff5)
+        brightness(1);
+    }
+    70%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff5)
+        brightness(1);
+    }
+    90%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 10px #fff)
+        brightness(10);
+    }
+    100%{
+        filter:drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff5)
+        brightness(1);
+    }
+}
+@keyframes move{
+    0%{
+        left: 0px;
+    }
+    20%{
+        left: 400px;
+    }
+    70%{
+        left: -400px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+.container .cloud::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    width: 110px;
+    height: 110px;
+    background-color: #484f59;
+    z-index: 3;
+    border-radius: 50%;
+    box-shadow: 90px -10px 0 30px #484f59;
+}
+.container .cloud::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #484f59;
+    z-index: 3;
+    border-radius: 100px;
+}
+.container .cloud .drop{
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    z-index: 2;
+    background-color: #00b7ff;
+    width: 2px;
+    height: 10px;
+    transform-origin: bottom;
+    animation: animateDrop 1s linear infinite;
+}
+@keyframes animateDrop{
+    0%{
+        transform: translateY(0) scaleY(1);
+    }
+    70%{
+        transform: translateY(360px) scaleY(1);
+    }
+    80%{
+        transform: translateY(360px) scaleY(0.2);
+    }
+    
+    100%{
+        transform: translateY(360px) scaleY(0) scaleX(15);
+
+    }
+}
+.container .floor{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to top, #139df8, transparent);
+    border-top: white 45px v transparent;
+}
+.container .floor .water{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top, #114a76, transparent);
+    filter: blur(4px);
+}
+.container .boat{
+    position: absolute;
+    top: 370px;
+    left: 50%;
+    width: 160px;
+    height: 35px;
+    z-index: 1;
+    background-color: #81a100;
+    border-radius: 0 0 20px 20px;
+    transform: translateX(-50%);
+}
+.container .boat::before{
+    content: '';
+    display: flex;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 20px;
+    height: 50px;
+    background-color: #efa963;
+    transform: translateX(-50%);
+}
+.container .boat::after{
+    content: '';
+    display: flex;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 25px solid #c53030;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.container .lighthouse{
+    position: absolute;
+    bottom: 430px;
+    right: 100px;
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 310px solid #a46e6e;
+    border-top: 80px solid #a46e6e;
+    border-radius: 20px;
+    filter: blur(3px);
+}
+.container .lighthouse::before{
+    content: '|+|+|+|';
+    font-size: 2em;
+    color: #31373e;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -60px;
+    left: 0;
+    width: 100px;
+    height: 60px;
+    transform: translateX(-50%);
+    background-color: #effc63e9;
+    box-shadow: 0 0 150px 30px #c9fb00;
+    border-radius: 20px;
+}
+.container .lighthouse::after{
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 60px solid #a46e6e;
+    border-radius: 20px;
+}
